@@ -2,6 +2,10 @@ let word = '';  // selected word
 
 async function process() {
     word = getSelection().toString().replace(/^\s+|\s+$/g, '');
+<<<<<<< HEAD
+=======
+    word = he.encode(word);
+>>>>>>> 6f85b48487181bba1bf2ababf72060decf5e45c7
     if (getSelection().isCollapsed === true)
         return;
     
@@ -11,7 +15,11 @@ async function process() {
             try {
                 browser.runtime.sendMessage({
                     origin: 'ntgd-content.js',
+<<<<<<< HEAD
                     word: encodeURIComponent(word)
+=======
+                    word: word
+>>>>>>> 6f85b48487181bba1bf2ababf72060decf5e45c7
                 })
                 .then(resp => {
                     if (document.getElementById('ntgd-bubble') === null)
@@ -39,6 +47,10 @@ document.addEventListener('mouseup', process);
 document.addEventListener('dblclick', process);
 
 function showBubble(resp) {
+<<<<<<< HEAD
+=======
+    word = he.encode(word);
+>>>>>>> 6f85b48487181bba1bf2ababf72060decf5e45c7
     let bubble = document.createElement('div');
     bubble.id = 'ntgd-bubble';
     bubble.shadow = bubble.attachShadow({mode: 'open'});
@@ -50,6 +62,7 @@ function showBubble(resp) {
     bubbleMain.id = 'ntgd-bubble-main';
     bubbleMain.innerHTML = 
     `<div id="ntgd-bubble-close"></div>
+<<<<<<< HEAD
     <a id="ntgd-bubble-query" target="_blank" href="https://translate.google.com?sl=auto&tl=zh-TW&q=${encodeURIComponent(word)}"></a>
     <div id="ntgd-bubble-meaning">Not Found.</div>`;
     
@@ -63,6 +76,20 @@ function showBubble(resp) {
     else if (resp.hasOwnProperty('sentences'))
         bubbleMain.querySelector('#ntgd-bubble-meaning').textContent = `${resp.sentences.map(e => e.trans).join(', ')}`;
     
+=======
+    <a id="ntgd-bubble-query" target="_blank" href="https://translate.google.com?sl=auto&tl=zh-TW&q=${word}">${word}</a>
+    <div id="ntgd-bubble-meaning">` + 
+        (resp.hasOwnProperty('dict') ? 
+            `<ul>
+                ${resp.dict.map(e => `<li><b>${e.pos}</b><div>${e.terms.join(', ')}</div></li>`).join('')}
+            </ul>`
+        : resp.hasOwnProperty('sentences') ?
+            `${resp.sentences.map(e => e.trans).join(', ')}`
+        :
+            `Not Found.`
+        ) + 
+    `</div>`;
+>>>>>>> 6f85b48487181bba1bf2ababf72060decf5e45c7
     bubble.shadow.append(bubbleMain);
     document.documentElement.append(bubble);
 

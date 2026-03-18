@@ -18,7 +18,11 @@
     "content_scripts": [
         {
             "matches": ["https://*/*", "http://*/*"],
+<<<<<<< HEAD
             "js": ["content.js"]
+=======
+            "js": ["he.js", "content.js"]
+>>>>>>> 6f85b48487181bba1bf2ababf72060decf5e45c7
         }
     ],
     "background": {
