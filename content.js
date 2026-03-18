@@ -2,10 +2,6 @@ let word = '';  // selected word
 
 async function process() {
     word = getSelection().toString().replace(/^\s+|\s+$/g, '');
-<<<<<<< HEAD
-=======
-    word = he.encode(word);
->>>>>>> 6f85b48487181bba1bf2ababf72060decf5e45c7
     if (getSelection().isCollapsed === true)
         return;
     
@@ -15,11 +11,7 @@ async function process() {
             try {
                 browser.runtime.sendMessage({
                     origin: 'ntgd-content.js',
-<<<<<<< HEAD
                     word: encodeURIComponent(word)
-=======
-                    word: word
->>>>>>> 6f85b48487181bba1bf2ababf72060decf5e45c7
                 })
                 .then(resp => {
                     if (document.getElementById('ntgd-bubble') === null)
@@ -47,10 +39,6 @@ document.addEventListener('mouseup', process);
 document.addEventListener('dblclick', process);
 
 function showBubble(resp) {
-<<<<<<< HEAD
-=======
-    word = he.encode(word);
->>>>>>> 6f85b48487181bba1bf2ababf72060decf5e45c7
     let bubble = document.createElement('div');
     bubble.id = 'ntgd-bubble';
     bubble.shadow = bubble.attachShadow({mode: 'open'});
