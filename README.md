@@ -6,7 +6,7 @@ This is a web extension created for Firefox based browsers.
 For Chromium version, please visit [here](https://github.com/Kishibe3/non-tracking-google-dictionary).
 
 # How to use
-Double click or select a word, then a bubble with translate result will show up. You can also click the extension icon to show popup page with a search bar. You can look up a word in the search bar.
+Double click or select a word, then a bubble with translate result will show up. You can also click the extension icon or hit the hotkey Ctrl+Alt+D (can be configured in manifest.json) to show popup page with a search bar. You can look up a word in the search bar.
 
 # How to install
 First download the project zip file.
