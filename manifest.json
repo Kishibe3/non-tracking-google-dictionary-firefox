@@ -23,5 +23,13 @@
     ],
     "background": {
         "scripts": ["background.js"]
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+D"
+            },
+            "description": "Open extension serach bar"
+        }
     }
 }
