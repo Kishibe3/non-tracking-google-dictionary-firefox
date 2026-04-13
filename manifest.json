@@ -31,5 +31,10 @@
             },
             "description": "Open extension serach bar"
         }
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "my-addon@example.com"
+        }
     }
 }
